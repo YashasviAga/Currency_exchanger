@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Rate Calculator | Javascript Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <img src="exchange_logo.png">
+            <h1>Exchange Rate Calculator</h1>
+        </div>
+        <div class="container">
+            <p>Choose the Currency and the amount to get the exchange rate</p>
+            <div class="from">
+                <select id="from_curr">
+                    <option value="rupee">INR</option>
+                    <option value="dollar">USD</option>
+                    <option value="euro">EUR</option>
+                    <option value="yuan">CNY</option>
+                    <option value="won">KRW</option>
+                </select>
+                <input type="text" id="input">
+            </div>
+            <div class="swap">
+                <button onclick="exchange()">Swap</button>
+                <span id="rate">1 INR = 1 INR</span>
+            </div>
+            <div class="to">
+                <select id="to_curr">
+                    <option value="rupee">INR</option>
+                    <option value="dollar">USD</option>
+                    <option value="euro">EUR</option>
+                    <option value="yuan">CNY</option>
+                    <option value="won">KRW</option>
+                </select>
+                <span id="output"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function exchange() {
+            var input_num = document.getElementById("input").value;
+            var initial_curr = document.getElementById("from_curr").value;
+            var final_curr = document.getElementById("to_curr").value;
+            if (initial_curr == "rupee" && final_curr == "rupee") {
+                document.getElementById("output").innerHTML = input_num;
+                document.getElementById("rate").innerHTML= "1 INR = 1 INR";
+            }
+            if (initial_curr == "rupee" && final_curr == "dollar") {
+                document.getElementById("output").innerHTML = (input_num * 0.012).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 INR = ).012 USD";
+            }
+            if (initial_curr == "rupee" && final_curr == "euro") {
+                document.getElementById("output").innerHTML = (input_num * 0.011).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 INR = 0.011 EUR";
+            }
+            if (initial_curr == "rupee" && final_curr == "yuan") {
+                document.getElementById("output").innerHTML = (input_num * 0.087).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 INR = 0.087 CNY";
+            }
+            if (initial_curr == "rupee" && final_curr == "won") {
+                document.getElementById("output").innerHTML = (input_num * 15.72).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 INR = 15.72 KRW";
+            }
+            if (initial_curr == "dollar" && final_curr == "rupee") {
+                document.getElementById("output").innerHTML = (input_num * 82.73).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 USD = 82.73 INR";
+            }
+            if (initial_curr == "dollar" && final_curr == "dollar") {
+                document.getElementById("output").innerHTML = input_num;
+                document.getElementById("rate").innerHTML= "1 USD = 1 USD";
+            }
+            if (initial_curr == "dollar" && final_curr == "euro") {
+                document.getElementById("output").innerHTML = (input_num * 0.91).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 USD = 0.91 EUR";
+
+            }
+            if (initial_curr == "dollar" && final_curr == "yuan") {
+                document.getElementById("output").innerHTML = (input_num * 7.18).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 USD = 7.18 CNY";
+            }
+            if (initial_curr == "dollar" && final_curr == "won") {
+                document.getElementById("output").innerHTML = (input_num * 1299.63).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 USD = 1299.63 KRW";
+            }
+            if (initial_curr == "euro" && final_curr == "rupee") {
+                document.getElementById("output").innerHTML = (input_num * 90.41).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 EUR = 90.41 INR";
+            }
+            if (initial_curr == "euro" && final_curr == "dollar") {
+                document.getElementById("output").innerHTML = (input_num * 1.09).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 EUR = 1.09 USD";
+            }
+            if (initial_curr == "euro" && final_curr == "euro") {
+                document.getElementById("output").innerHTML = input_num;
+                document.getElementById("rate").innerHTML= "1 EUR = 1 EUR";
+            }
+            if (initial_curr == "euro" && final_curr == "yuan") {
+                document.getElementById("output").innerHTML = (input_num * 7.81).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 EUR = 7.81 CNY";
+            }
+            if (initial_curr == "euro" && final_curr == "won") {
+                document.getElementById("output").innerHTML = (input_num * 1420.29).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 EUR = 1420.29 KRW";
+            }
+            if (initial_curr == "yuan" && final_curr == "rupee") {
+                document.getElementById("output").innerHTML = (input_num * 11.53).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 CNY = 11.53 INR";
+            }
+            if (initial_curr == "yuan" && final_curr == "dollar") {
+                document.getElementById("output").innerHTML = (input_num * 0.14).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 CNY = 0.14 USD";
+            }
+            if (initial_curr == "yuan" && final_curr == "euro") {
+                document.getElementById("output").innerHTML = (input_num * 0.13).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 CNY = 0.13 EUR";
+            }
+            if (initial_curr == "yuan" && final_curr == "yuan") {
+                document.getElementById("output").innerHTML = input_num;
+                document.getElementById("rate").innerHTML= "1 CNY = 1 CNY";
+            }
+            if (initial_curr == "yuan" && final_curr == "won") {
+                document.getElementById("output").innerHTML = (input_num * 181.12).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 CNY = 181.12 KRW";
+            }
+            if (initial_curr == "won" && final_curr == "rupee") {
+                document.getElementById("output").innerHTML = (input_num * 0.064).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 KRW = 0.064 INR";
+            }
+            if (initial_curr == "won" && final_curr == "dollar") {
+                document.getElementById("output").innerHTML = (input_num * 0.00077).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 KRW = 0.00077 USD";
+            }
+            if (initial_curr == "won" && final_curr == "euro") {
+                document.getElementById("output").innerHTML = (input_num * 0.00070).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 KRW = 0.00070 EUR";
+            }
+            if (initial_curr == "won" && final_curr == "yuan") {
+                document.getElementById("output").innerHTML = (input_num * 0.0055).toFixed(2);
+                document.getElementById("rate").innerHTML= "1 KRW = 0.0055 CNY";
+            }
+            if (initial_curr == "won" && final_curr == "won") {
+                document.getElementById("output").innerHTML = input_num;
+                document.getElementById("rate").innerHTML= "1 KRW = 1 KRW";
+            }
+        }
+    </script>
+</body>
+</html>

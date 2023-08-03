@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    text-align: center;
+}
+.header img{
+    width: 300px;
+}
+.header h1{
+    font-family: sans-serif;
+    color: rgb(1, 39, 136);
+}
+.container p{
+    font-size: 17px;
+    margin: 30px;
+}
+.from, .swap, .to{
+    width: 25%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+select{
+    background: none;
+    padding: 10px 0px 10px 10px;
+    border: 1px solid rgba(242, 186, 82, 0.773);
+    border-radius: 10px;
+}
+input{
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(242, 186, 82, 0.773);
+}
+.swap{
+    padding: 30px 0px;
+}
+#rate{
+    padding: 10px 5% 10px 30px;
+    color: rgba(209, 161, 72, 0.948);
+}
+.swap button{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: medium;
+    background-color: rgba(242, 186, 82, 0.773);
+    border: 1px solid rgba(242, 186, 82, 0.877);
+}
+#output{
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(242, 186, 82, 0.773);
+}
